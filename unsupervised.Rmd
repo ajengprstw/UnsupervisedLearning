@@ -1,0 +1,74 @@
+---
+title: "Unsupervised Learning"
+author: "Ajeng Prastiwi"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    highlight: haddock
+    self_contained: false
+    reveal_plugins: ["zoom", "notes", "chalkboard", "menu"]
+    css: assets/style.css  
+    center: TRUE
+    reveal_options:
+      center: TRUE
+      chalkboard: 
+        theme: black
+        toggleNotesButton: true
+      menu:
+        numbers: true
+---
+
+# Outline
+
+## What you'll learn today
+
+* Comparison between supervised with unsupervised machine learning
+* Principal Component Analysis
+
+## Training Objective
+
+![](assets/Principal Component Analysis (PCA).png)
+
+# Supervised vs Unsupervised Learning
+
+---
+
+What makes unsupervised learning different from supervised learning?
+
+Can you spot the difference based on this picture?
+
+![](assets/WD_2.jpg)
+
+
+## Dimensionality Reduction
+
+From 32x32 pixels (1024 dimensions) to just 50 dimensions
+
+![](assets/reconstruct.png)
+
+## The goal of PCA
+
+**To explain most of the variability in the data with a smaller number of variables than the original data set**
+
+## How does PCA works?
+
+Reduce the complexity of model by remove the redundant dimensions from data
+
+![](assets/pca2.png)
+
+## Result: a More Valuable Data
+
+![](assets/ul6.JPG)
+
+Some people have likened unsupervised learning to an **exploratory process** of the data, which there are:
+
+- No target variable
+- No model building & assumption
+- No model evaluation
+- Focus on **understanding pattern in a data** to identify opportunities for **dimensionality reduction** or for **clustering**
+
+---
+
+
+**Let's go to `inclass.rmd` !** `r emo::ji("smile")`

@@ -1,0 +1,85 @@
+---
+title: 'Unsupervised Learning'
+author: "Ajeng Prastiwi"
+date: "`r format(Sys.Date(), '%B %e, %Y')`"
+output:
+  html_document:
+    df_print: paged
+    highlight: tango
+    theme: cosmo
+    toc: yes
+    toc_float:
+      collapsed: no
+  word_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Glimpse our Data
+
+we will use `USArrests` datasets from R. Take a quick look at the datases, which comprise of arrests per 100.000 residents related to one of three crimes in each of the 50 US states in 1973
+```{r}
+data("USArrests")
+head(USArrests)
+```
+Murder: murder arrests per 100,000
+Assault: assault arrests per 100,000
+UrbanPop: percent of population in urban areas
+Rape: rape arrests per 100,000
+
+## Explore the data
+```{r echo=FALSE}
+apply(USArrests,2, var)
+```
+
+## PCA in R
+
+We use the `prcomp()` function, and we can add parameter `scale = TRUE` if we want the data to be scaled.
+```{r echo=FALSE}
+US_pca <- prcomp(USArrests,scale = TRUE)
+US_pca
+```
+
+```{r echo=FALSE}
+plot(US_pca)
+```
+
+The `summary()` function tells us how much variation each of the principal components have captured in decreasing order
+
+```{r echo=FALSE}
+summary(US_pca)
+```
+
+
+## Visualizing PCA
+
+We can see the projection of our data on the first two principal component (PC1 and PC2) with `biplot` function.
+
+```{r}
+biplot(US_pca)
+```
+
+
+## Dive Deeper
+
+
+1. What does `eigenvalue` mean in PCA?
+
+  a. Eigen value explain the correlation between PC and original variable
+
+  b. Eigen value explain the coefficient for each Principal Component
+
+  c. Eigen value explain the variance for each Principal Component
+
+2. Which of the following is `not true` about PCA?
+
+  a. PCA can visualizing high dimensional data
+
+  b. PCA will produce high correlation between each of the principal components
+
+  c. PCA tries to summarize the covariance betweens variables of our data
+
