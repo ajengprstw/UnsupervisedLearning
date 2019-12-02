@@ -23,7 +23,7 @@ output:
 
 ## What you'll learn today
 
-* Comparison between supervised with unsupervised machine learning
+* Comparison between supervised with unsupervised learning
 * Principal Component Analysis
 
 ## Training Objective
